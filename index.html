@@ -324,6 +324,11 @@
         .card:nth-child(even) {
             animation-delay: 0.1s;
         }
+
+        .bullet-item {
+            margin-left: 20px;
+            display: block;
+        }
     </style>
 </head>
 
@@ -361,7 +366,7 @@
                     Fija">"Local">"Gobierno">"Bono Soberano". Finalmente completar los campos
                     restantes.
                 </p>
-                <a href="1-registrar-instrumento.html" class="btn">Abrir Registro de Inversiones</a>
+                <a href="registrar-instrumento.html" class="btn">Abrir Registro de Inversiones</a>
             </div>
         </div>
 
@@ -383,6 +388,11 @@
                 </div>
                 <!-- <p>Sistema de notificaciones que alerta al área de Tesorería sobre nuevas inversiones financieras
                     registradas que requieren su atención y procesamiento.</p> -->
+
+                <p>TE al ingresar al sistema recibe una notificación asociada al proceso de "Registro de inversion
+                    financiera" con el detalle de codigo de inversión. Al hacer click (sistema real) debería redirigir
+                    al listado de
+                    inversiones. </p>
                 <a href="xxxxxxxxxxxx.html" class="btn">Abrir Notificaciones</a>
             </div>
 
@@ -394,8 +404,23 @@
                         <span class="screen-type">Pantalla 2</span>
                     </div>
                 </div>
-                <!-- <p>Vista consolidada de todas las inversiones financieras pendientes de procesamiento por Tesorería.
-                    Permite filtrar, buscar y revisar el estado de cada inversión.</p> -->
+
+
+                <p>
+                    Pantalla que consolidad las inversiones financieras y su cuponera asociadada si aplica (hacer click
+                    en
+                    "+")<br>
+                    &nbsp;&nbsp;• Inv # 2001 es el que representa la inversión registrada en el paso
+                    1. Estado REGISTRADO (Sin Cuponera)<br>
+                    &nbsp;&nbsp;• Inv # 1001 representa una inversion anterior con estado GENERADA
+                    (cuponera
+                    generada) <br>
+                    &nbsp;&nbsp;• Opcion "APROBAR" aprueba la inversion (REGISTRADO -> APROBADO)<br>
+                    &nbsp;&nbsp;• Opcion "VER DETALLE" ver la inversion
+
+                </p>
+
+
                 <a href="aprobar-inversion.html" class="btn">Abrir Listado Tesorería</a>
             </div>
         </div>
@@ -416,10 +441,16 @@
                         <span class="screen-type">Pantalla 1</span>
                     </div>
                 </div>
-                <!-- <p>Vista principal de OGR para consultar inversiones financieras aprobadas y listas para procesamiento.
-                    Incluye funcionalidades de búsqueda, filtros y botón para navegar hacia la generación de cuponeras.
-                </p> -->
-                <a href="oxxxxxxxxxxxxxxxxxxx.html" class="btn">Abrir Listado OGR</a>
+                <p>
+                    Pantalla que consolida las inversiones financieras. El usuario tendrá las siguientes opciones "VER
+                    CUPONERA", y "GENERAR CUPONERA"<br>
+                    &nbsp;&nbsp;• Inv # 2001 en estado APROBADO podra ver opción "GENERAR CUPONERA" <br>
+                    &nbsp;&nbsp;• Inv # 1001 en estado GENERADO podra ver opción "VER CUPONERA" <br>
+                    &nbsp;&nbsp;• Opcion "GENERAR CUPONERA" debe redirigir a la pantalla de "GESTION DE CUPONERA" para
+                    generar cuponera. <br>
+                </p>
+
+                <a href="3-Listado.html" class="btn">Abrir Listado</a>
             </div>
 
             <div class="card">
@@ -430,10 +461,14 @@
                         <span class="screen-type">Pantalla 2 - Desde Pantalla 1</span>
                     </div>
                 </div>
-                <!-- <p>Herramienta para generar cronogramas de pagos con diferentes tipos de tasa (nominal, efectiva,
-                    variable y VAC). Se accede desde el listado principal mediante botón específico dentro de esa
-                    pantalla.</p> -->
-                <a href="xxxxxxxxxxxxxxxx.html" class="btn">Abrir Gestión de Cuponera</a>
+                <p>
+                    Pantalla que permite generar cuponera de una inversión. Para seguir el ejemplo seleccionar
+                    tipo de tasa
+                    "VAC" e ingresar "IRD incial" 1.525. Finalmente hacer click en "GENERAR" y se generará la cuponera
+                    <br>
+
+                </p>
+                <a href="3.1-generacion-cuponera.html" class="btn">Abrir Gestión de Cuponera</a>
             </div>
 
             <div class="card">
@@ -444,10 +479,14 @@
                         <span class="screen-type">Pantalla 3</span>
                     </div>
                 </div>
-                <!-- <p>Vista alternativa del listado de inversiones con funcionalidades adicionales o diferentes filtros.
-                    También incluye botón interno para navegar hacia gestión de cuponeras con configuraciones
-                    específicas.</p> -->
-                <a href="xxxxxxxxxxxxxxx.html" class="btn">Abrir Listado Variante</a>
+                <p>
+                    &nbsp;&nbsp;• Usuario consulta la pantalla "Listado de inversiones" y observa que el estado de la
+                    inversion 2001 se actualizó
+                    (APROBADO -> GENERADO). Por tanto, ahora puede ver su cuponera asociada y la opcion "VER CUPONERA"
+                    <br>
+                    &nbsp;&nbsp;• Finalmente hacer click en "VER CUPONERA"
+                </p>
+                <a href="4-Listado.html" class="btn">Abrir Listado</a>
             </div>
 
             <div class="card">
@@ -455,12 +494,19 @@
                     <div class="card-icon">⚙️</div>
                     <div class="card-title-container">
                         <h3>Gestión de Cuponera </h3>
-                        <span class="screen-type">Pantalla 4 - Desde Pantlla 3<span>
+                        <span class="screen-type">Pantalla 4 - Desde Pantalla 3<span>
                     </div>
                 </div>
-                <!-- <p>gestión de cuponeras con funcionalidades específicas o configuraciones
-                    diferentes. Se accede desde el listado variante mediante botón interno de esa pantalla.</p> -->
-                <a href="xxxxxxxxxxxxxx.html" class="btn">Abrir Cuponera Variante</a>
+                <p>
+                    &nbsp;&nbsp;• El usuario puede ver la cuponera generada con el tipo de tasa VAC e IRD inicial
+                    deshabilitados.<br>
+
+                    &nbsp;&nbsp;• En la cuponera podra RECALCULAR, APROBAR, REVERTIR, APROBAR TODO, REVERTIR TODO,
+                    EDITAR e ingresar IRD Actual para probar funcionamiento de cuponera.
+                    <br>
+
+                </p>
+                <a href="4.1-ver-cuponera.html" class="btn">Abrir Gestión de cuponera</a>
             </div>
         </div>
 
@@ -480,8 +526,11 @@
                         <span class="screen-type">Pantalla 1</span>
                     </div>
                 </div>
-                <!-- <p>Sistema de alertas que notifica a Tesorería sobre cupones recién aprobados por OGR que están listos
-                    para el procesamiento de pagos y gestión final.</p> -->
+                <p>
+                    Al loguearse aparece una notificacion con el mensaje de Nuevo cupón asociado y el código de
+                    este. Al hacer click en el sistema real debería redirigir a la pantalla de "Busqueda de cupones"
+
+                </p>
                 <a href="xxxxxxxxxxxxxxxxxxx.html" class="btn">Abrir Notificaciones</a>
             </div>
 
@@ -493,10 +542,27 @@
                         <span class="screen-type">Pantalla 2</span>
                     </div>
                 </div>
-                <!-- <p>Herramienta de búsqueda avanzada para localizar cupones específicos por diferentes criterios. Incluye
-                    botón interno que permite navegar hacia la funcionalidad de cancelación de pagos para casos
-                    específicos.</p> -->
-                <a href="xxxxxxxxxxxxxxxx.html" class="btn">Abrir Búsqueda</a>
+                <p>
+                    En esta pantalla el usuario podrá probar el funcionamiento de la cancelacion individual y la
+                    cancelacion masiva:<br>
+                    &nbsp;&nbsp;• El usuario puede utilizar los filtros de busqueda como fechas de cupón para obtener
+                    listado de cupones proximos a vencer. Para este ejemplo se cancelará el primer cupón de la inversion
+                    generada, es
+                    decir INV # 2002 (registro n°6) <br>
+                    &nbsp;&nbsp;• Para cancelacion individual hacer click en boton "CANCELAR". Utilizar el registro N°
+                    6 y
+                    dar cancelar, completar datos y confirmar. Esta opcion redirigirá a la siguiente pantalla segun el
+                    tipo
+                    de cancelacion seleccionada <br>
+                    &nbsp;&nbsp;• Para cancelacion masiva, seleccionar regsitros N° 4 y 5 se habilitara el boton de
+                    CANCELACION MASIVA, abrira una ventana, completar datos y confirmar operacion. Finalmente estos
+                    registros cambiaran a estado CANCELADO
+                    <br>
+
+
+
+                </p>
+                <a href="5-busqueda-cupones.html" class="btn">Abrir Búsqueda</a>
             </div>
 
             <div class="card">
@@ -507,9 +573,13 @@
                         <span class="screen-type">Pantalla 3 - Desde Pantalla 2</span>
                     </div>
                 </div>
-                <!-- <p>Funcionalidad para cancelar pagos de cupones cuando sea necesario. Se accede desde la búsqueda de
-                    cupones mediante botón interno para casos específicos que requieren esta acción.</p> -->
-                <a href="xxxxxxxxxxxx.html" class="btn">Abrir Cancelación</a>
+                <p>
+                    &nbsp;&nbsp;• El usuario podrá realizar el pago según el tipo de cancelacion que se seleccionó
+                    en
+                    la pantalla anterior. <br> &nbsp;&nbsp;•
+                    Probar el funcionamiento de cada tipo de cancelación.
+                </p>
+                <a href="6-tipos-cancelacion-ejemplo.html" class="btn">Abrir Cancelación</a>
             </div>
 
             <div class="card">
@@ -520,9 +590,13 @@
                         <span class="screen-type">Pantalla 4</span>
                     </div>
                 </div>
-                <!--<p>Vista alternativa de búsqueda de cupones con diferentes filtros o funcionalidades específicas para
-                    casos particulares de gestión financiera.</p>-->
-                <a href="xxxxxxxxxxxxxxx.html" class="btn">Abrir Búsqueda </a>
+                <p>
+                    El usuario consulta nuevamente la pantalla de "Busqueda de cupones" y observa que el registro INV #
+                    2002 del cupón ha sido actualizado a estado "CANCELADO" por tanto ya no tendrá la opcion "CANCELAR"
+
+
+                </p>
+                <a href="7-busqueda-cupones-cancelado.html" class="btn">Abrir Búsqueda </a>
             </div>
         </div>
     </div>
