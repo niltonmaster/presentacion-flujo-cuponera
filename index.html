@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototipos Funcionales - OGR</title>
+    <title>Prototipos Funcionales - Sistema de Inversiones</title>
     <style>
         * {
             margin: 0;
@@ -14,14 +14,14 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: white;
+            background: #f8fafc;
             min-height: 100vh;
             padding: 40px 20px;
             color: #333;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -63,23 +63,69 @@
             line-height: 1.6;
         }
 
+        /* Section Headers */
+        .section-header {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin: 40px 0 30px 0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid;
+            position: relative;
+        }
+
+        .section-header {
+            border-left-color: #3498db;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.02) 0%, white 100%);
+        }
+
+        .section-header h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-header .step-number {
+            background: #2c3e50;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1rem;
+            margin-left: 50px;
+        }
+
         /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
             margin-bottom: 40px;
         }
 
         .card {
             background: white;
             border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             border: 1px solid #e3e8ed;
+            height: fit-content;
         }
 
         .card::before {
@@ -89,52 +135,94 @@
             left: 0;
             right: 0;
             height: 4px;
+        }
+
+        .card::before {
             background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .card-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            width: 50px;
+            height: 50px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: white;
+            flex-shrink: 0;
         }
 
-        .card h2 {
+        .card-icon {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+
+        .card-title-container {
+            flex: 1;
+        }
+
+        .card h3 {
             color: #2c3e50;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             line-height: 1.3;
+        }
+
+        .card .screen-type {
+            background: #ecf0f1;
+            color: #7f8c8d;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
         }
 
         .card p {
             color: #666;
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+        }
+
+        .card .special-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #856404;
+        }
+
+        .card .special-note.link {
+            background: #e3f2fd;
+            border-color: #bbdefb;
+            color: #0d47a1;
         }
 
         .btn {
             display: block;
             width: 100%;
-            padding: 15px 20px;
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            padding: 14px 20px;
             color: white;
             text-decoration: none;
             border: none;
             border-radius: 10px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             text-align: center;
             cursor: pointer;
@@ -143,24 +231,28 @@
             letter-spacing: 0.5px;
         }
 
+        .btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+
         .btn:hover {
             background: linear-gradient(135deg, #2980b9 0%, #1f5f8b 100%);
-            transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            transform: translateY(-2px);
         }
 
         .btn:active {
             transform: translateY(0);
         }
 
-        /* Profile Badge */
-        .profile-badge {
+        /* Progress Indicator */
+        .progress-indicator {
             position: fixed;
             top: 20px;
             right: 20px;
             background: rgba(0, 92, 151, 0.9);
             color: white;
-            padding: 10px 20px;
+            padding: 15px 25px;
             border-radius: 25px;
             font-size: 0.9rem;
             font-weight: 600;
@@ -192,7 +284,7 @@
                 padding: 20px 10px;
             }
 
-            .profile-badge {
+            .progress-indicator {
                 position: relative;
                 top: auto;
                 right: auto;
@@ -200,6 +292,15 @@
                 display: block;
                 text-align: center;
                 width: fit-content;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-header p {
+                margin-left: 0;
+                margin-top: 10px;
             }
         }
 
@@ -220,45 +321,208 @@
             animation: fadeInUp 0.6s ease forwards;
         }
 
-        .card:nth-child(2) {
+        .card:nth-child(even) {
             animation-delay: 0.1s;
         }
     </style>
 </head>
 
 <body>
-    <!-- Profile Badge -->
-    <div class="profile-badge">
-        Perfil: OGR (Operaciones)
+    <div class="progress-indicator">
+        Sistema de Inversiones Financieras
     </div>
 
     <div class="container">
-        <!-- Header -->
         <div class="header">
-            <h1>Prototipos - OGRRRR</h1>
-            <p>Seleccione el prototipo que desea revisar</p>
+            <h1>Prototipos de pantalla</h1>
+            <P>Navegue por las pantallas del sistema siguiendo la secuencia de proceso presentada</P>
         </div>
 
-        <!-- Cards Grid -->
-        <div class="cards-grid">
-            <!-- Card 1: Lista de Inversiones -->
-            <div class="card">
-                <div class="card-icon">📋</div>
-                <h2>Lista de Inversiones</h2>
-                <p>Prototipo de consulta de inversiones registradas con navegación hacia generación de
-                    cupones.</p>
+        <div class="section-header">
+            <h2>
+                <span class="step-number">1</span>
+                DIN - Registro Inicial
+            </h2>
+        </div>
 
-                <a href="listado.html" class="btn">Abrir Lista de Inversiones</a>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📝</div>
+                    <div class="card-title-container">
+                        <h3>Registro de Inversiones Financieras</h3>
+                        <span class="screen-type">Pantalla Principal</span>
+                    </div>
+                </div>
+                <p>Formulario principal para el registro de nuevas inversiones financieras en el sistema.
+                </p>
+                <p>
+                    Para registrar una inversion usar la siguiente estructura "Renta
+                    Fija">"Local">"Gobierno">"Bono Soberano". Finalmente completar los campos
+                    restantes.
+                </p>
+                <a href="1-registrar-instrumento.html" class="btn">Abrir Registro de Inversiones</a>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2>
+                <span class="step-number">2</span>
+                TE - Aprobar inversión
+            </h2>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔔</div>
+                    <div class="card-title-container">
+                        <h3>Notificación de Inversión Financiera</h3>
+                        <span class="screen-type">Pantalla 1</span>
+                    </div>
+                </div>
+                <!-- <p>Sistema de notificaciones que alerta al área de Tesorería sobre nuevas inversiones financieras
+                    registradas que requieren su atención y procesamiento.</p> -->
+                <a href="xxxxxxxxxxxx.html" class="btn">Abrir Notificaciones</a>
             </div>
 
-            <!-- Card 2: Generación de Cuponera -->
             <div class="card">
-                <div class="card-icon">⚙️</div>
-                <h2>Generación de Cuponera</h2>
-                <p>Prototipo para generar cronogramas de pagos con diferentes tipos de tasa: nominal, efectiva, variable
-                    y VAC.</p>
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <div class="card-title-container">
+                        <h3>Listado de Inversiones Financieras</h3>
+                        <span class="screen-type">Pantalla 2</span>
+                    </div>
+                </div>
+                <!-- <p>Vista consolidada de todas las inversiones financieras pendientes de procesamiento por Tesorería.
+                    Permite filtrar, buscar y revisar el estado de cada inversión.</p> -->
+                <a href="aprobar-inversion.html" class="btn">Abrir Listado Tesorería</a>
+            </div>
+        </div>
 
-                <a href="generacion-cuponera.html" class="btn">Abrir Generación de Cuponera</a>
+        <div class="section-header">
+            <h2>
+                <span class="step-number">3</span>
+                OGR - Gestión de cuponera
+            </h2>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📋</div>
+                    <div class="card-title-container">
+                        <h3>Listado de Inversiones Financieras</h3>
+                        <span class="screen-type">Pantalla 1</span>
+                    </div>
+                </div>
+                <!-- <p>Vista principal de OGR para consultar inversiones financieras aprobadas y listas para procesamiento.
+                    Incluye funcionalidades de búsqueda, filtros y botón para navegar hacia la generación de cuponeras.
+                </p> -->
+                <a href="oxxxxxxxxxxxxxxxxxxx.html" class="btn">Abrir Listado OGR</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⚙️</div>
+                    <div class="card-title-container">
+                        <h3>Gestión de Cuponera</h3>
+                        <span class="screen-type">Pantalla 2 - Desde Pantalla 1</span>
+                    </div>
+                </div>
+                <!-- <p>Herramienta para generar cronogramas de pagos con diferentes tipos de tasa (nominal, efectiva,
+                    variable y VAC). Se accede desde el listado principal mediante botón específico dentro de esa
+                    pantalla.</p> -->
+                <a href="xxxxxxxxxxxxxxxx.html" class="btn">Abrir Gestión de Cuponera</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📋</div>
+                    <div class="card-title-container">
+                        <h3>Listado de Inversiones</h3>
+                        <span class="screen-type">Pantalla 3</span>
+                    </div>
+                </div>
+                <!-- <p>Vista alternativa del listado de inversiones con funcionalidades adicionales o diferentes filtros.
+                    También incluye botón interno para navegar hacia gestión de cuponeras con configuraciones
+                    específicas.</p> -->
+                <a href="xxxxxxxxxxxxxxx.html" class="btn">Abrir Listado Variante</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">⚙️</div>
+                    <div class="card-title-container">
+                        <h3>Gestión de Cuponera </h3>
+                        <span class="screen-type">Pantalla 4 - Desde Pantlla 3<span>
+                    </div>
+                </div>
+                <!-- <p>gestión de cuponeras con funcionalidades específicas o configuraciones
+                    diferentes. Se accede desde el listado variante mediante botón interno de esa pantalla.</p> -->
+                <a href="xxxxxxxxxxxxxx.html" class="btn">Abrir Cuponera Variante</a>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2>
+                <span class="step-number">4</span>
+                TE - Cancelacion de cupón
+            </h2>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">✅</div>
+                    <div class="card-title-container">
+                        <h3>Notificación de Nuevo Cupón Aprobado</h3>
+                        <span class="screen-type">Pantalla 1</span>
+                    </div>
+                </div>
+                <!-- <p>Sistema de alertas que notifica a Tesorería sobre cupones recién aprobados por OGR que están listos
+                    para el procesamiento de pagos y gestión final.</p> -->
+                <a href="xxxxxxxxxxxxxxxxxxx.html" class="btn">Abrir Notificaciones</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔍</div>
+                    <div class="card-title-container">
+                        <h3>Búsqueda de Cupones</h3>
+                        <span class="screen-type">Pantalla 2</span>
+                    </div>
+                </div>
+                <!-- <p>Herramienta de búsqueda avanzada para localizar cupones específicos por diferentes criterios. Incluye
+                    botón interno que permite navegar hacia la funcionalidad de cancelación de pagos para casos
+                    específicos.</p> -->
+                <a href="xxxxxxxxxxxxxxxx.html" class="btn">Abrir Búsqueda</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">💰</div>
+                    <div class="card-title-container">
+                        <h3>Cancelación de Pago del Cupón</h3>
+                        <span class="screen-type">Pantalla 3 - Desde Pantalla 2</span>
+                    </div>
+                </div>
+                <!-- <p>Funcionalidad para cancelar pagos de cupones cuando sea necesario. Se accede desde la búsqueda de
+                    cupones mediante botón interno para casos específicos que requieren esta acción.</p> -->
+                <a href="xxxxxxxxxxxx.html" class="btn">Abrir Cancelación</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🔍</div>
+                    <div class="card-title-container">
+                        <h3>Búsqueda de Cupones (Verificación)</h3>
+                        <span class="screen-type">Pantalla 4</span>
+                    </div>
+                </div>
+                <p>Vista alternativa de búsqueda de cupones con diferentes filtros o funcionalidades específicas para
+                    casos particulares de gestión financiera.</p>
+                <a href="xxxxxxxxxxxxxxx.html" class="btn">Abrir Búsqueda Alt</a>
             </div>
         </div>
     </div>
